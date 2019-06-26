@@ -1,0 +1,20 @@
+// index.scss
+
+// 变量测试
+$fontColor:  #red;
+$backColor: aqua;
+// 嵌套类测试
+div {
+  p {
+    font-weight: bold;
+    font-size: 20px;
+    color: $fontColor;
+  }
+}
+
+div{
+  background: $backColor;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
