@@ -11,6 +11,7 @@ const  minifycss = require('gulp-minify-css'); // 压缩css
 const  del = require('del'); //文件删除
 const connect = require('gulp-connect'); // 自动刷新页面
 
+// 起服务
 gulp.task('server', function() {
   connect.server({
     port: 8080, //指定端口号，在浏览器中输入localhost:8080就可以直接访问生成的html页面
@@ -43,12 +44,13 @@ gulp.task('my-task-css', function() {
     .pipe(gulp.dest('./dist/css'))
 
 });
-
+// 重新更新html
 gulp.task('html', function(){
   gulp.src('*.html')
     .pipe(gulp.dest('dist/html'))
     .pipe(connect.reload())
 })
+
 //执行压缩前，先删除以前压缩的文件
 gulp.task('clean', function() {
   return del(['./dist/css/all.css', './dist/css/all.min.css', './dist/all.js','./dist/all.min.js', './dist/html'])
